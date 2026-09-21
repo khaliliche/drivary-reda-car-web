@@ -1,14 +1,23 @@
-﻿import { getAvailableVehicles } from "@/lib/db";
+﻿import { getVehicles } from "@/lib/api-client";
 import VehicleCard from "@/components/home/VehicleCard";
+
+type SearchParams = {
+  ville?: string;
+  depart?: string;
+  retour?: string;
+};
 
 export default async function VehiclesPage({
   searchParams,
 }: {
-  searchParams: Promise<{ ville?: string; depart?: string; retour?: string }>;
+  searchParams: Promise<SearchParams>;
 }) {
   const params = await searchParams;
-  const hasSearch = Boolean(params.ville && params.depart && params.retour);
-  const vehicles = await getAvailableVehicles(params.depart, params.retour);
+
+  const { ville, depart, retour } = params;
+  const hasSearch = Boolean(ville && depart && retour);
+
+  const vehicles = await getVehicles(depart, retour);
 
   return (
     <main className="pb-20 pt-24 sm:pt-32">
@@ -17,9 +26,10 @@ export default async function VehiclesPage({
           <h1 className="font-display text-3xl font-extrabold text-[var(--color-ink)] sm:text-4xl">
             Nos véhicules
           </h1>
+
           {hasSearch ? (
             <p className="mt-2 font-body text-sm text-black/60 sm:mt-3 sm:text-base">
-              Disponibilité à {params.ville} du {params.depart} au {params.retour}.
+              Disponibilité à {ville} du {depart} au {retour}.
             </p>
           ) : (
             <p className="mt-2 font-body text-sm text-black/60 sm:mt-3 sm:text-base">

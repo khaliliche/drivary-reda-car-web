@@ -1,4 +1,4 @@
-export const siteConfig = {
+﻿export const siteConfig = {
   name: "Ahmed Red Car",
   tagline: "Location de voitures au Maroc",
   phone: "+212 6 61 41 27 59",
@@ -9,6 +9,7 @@ export const siteConfig = {
     { label: "Comment ca marche", href: "/#comment-ca-marche" },
     { label: "A propos", href: "/#a-propos" },
     { label: "Contact", href: "/#contact" },
+    { label: "Conditions générales", href: "/conditions-generales" },
   ],
 };
 
@@ -40,10 +41,10 @@ export function buildReservationWhatsAppMessage(data: {
     ``,
     `Vehicule : ${data.vehicleLabel}`,
     `Client : ${data.fullName} (${data.age} ans)`,
-    `CIN N° : ${data.cinNumber}`,
-    `N° permis : ${data.driverLicenseNumber}`,
+    `CIN NÂ° : ${data.cinNumber}`,
+    `NÂ° permis : ${data.driverLicenseNumber}`,
     `Permis obtenu le : ${data.licenseIssueDate}`,
-    `Passeport N° : ${data.driverPassportNumber}`,
+    `Passeport NÂ° : ${data.driverPassportNumber}`,
     `Adresse : ${data.driverAddress}`,
     `Telephone : ${data.driverPhone}`,
   ];
@@ -63,3 +64,4 @@ export function buildReservationWhatsAppMessage(data: {
 
   return lines.join("\n");
 }
+

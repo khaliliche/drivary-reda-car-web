@@ -1,14 +1,19 @@
+
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { ArrowLeft } from "lucide-react";
-import { getVehicles, getVehicleBySlug } from "@/lib/db";
+
+import { getVehicles, getVehicleBySlug } from "@/lib/api-client";
 import ReservationSection from "@/components/vehicules/ReservationSection";
 
 export async function generateStaticParams() {
   const vehicles = await getVehicles();
-  return vehicles.map((v) => ({ slug: v.slug }));
+
+  return vehicles.map((v) => ({
+    slug: v.slug,
+  }));
 }
 
 export async function generateMetadata({
@@ -20,12 +25,14 @@ export async function generateMetadata({
   const vehicle = await getVehicleBySlug(slug);
 
   if (!vehicle) {
-    return { title: "Véhicule introuvable | Ahmed Red Car" };
+    return {
+      title: "Véhicule introuvable | Drivary Reda Car",
+    };
   }
 
   return {
-    title: `Location ${vehicle.brand} ${vehicle.model} | Ahmed Red Car`,
-    description: `Louez une ${vehicle.brand} ${vehicle.model} à partir de ${vehicle.price_per_day} DH/jour avec Ahmed Red Car.`,
+    title: `Location ${vehicle.brand} ${vehicle.model} | Drivary Reda Car`,
+    description: `Louez une ${vehicle.brand} ${vehicle.model} à partir de ${vehicle.price_per_day} DH/jour avec Drivary Reda Car.`,
   };
 }
 
@@ -42,14 +49,14 @@ export default async function VehiclePage({
   }
 
   return (
-    <main className="pb-28 pt-32 sm:pb-20">
+     <main className="pb-28 pt-32 sm:pb-20">
       <div className="mx-auto max-w-5xl px-6 lg:px-10">
-        <Link
+         <Link
           href="/vehicules"
           className="inline-flex items-center gap-2 text-sm text-black/60 transition-colors hover:text-black"
         >
           <ArrowLeft size={16} />
-          Retour aux vehicules
+          Retour aux véhicules
         </Link>
 
         <div className="mt-6 grid grid-cols-1 gap-10 lg:grid-cols-2">

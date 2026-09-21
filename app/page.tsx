@@ -7,7 +7,7 @@ import HowItWorks from "@/components/home/HowItWorks";
 import Testimonials from "@/components/home/Testimonials";
 import AboutSection from "@/components/home/AboutSection";
 import Reviews from "@/components/home/Reviews";
-import { getVehicles } from "@/lib/db";
+import { getVehicles } from "@/lib/api-client";
 
 export default async function Home() {
   const vehicles = await getVehicles();
