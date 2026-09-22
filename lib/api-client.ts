@@ -1,4 +1,4 @@
-const API_URL = process.env.DRIVARY_API_URL!;
+﻿const API_URL = process.env.DRIVARY_API_URL!;
 
 export type Vehicle = {
   id: number;
@@ -33,22 +33,26 @@ export async function getVehicleBySlug(slug: string): Promise<Vehicle | null> {
 
 export type CreateReservationInput = {
   vehicle_id: number;
-  vehicle_label: string;
-  full_name: string;
-  age: number;
+
+  prenom: string;
+  nom: string;
+  date_naissance: string;
   cin_number: string;
   license_issue_date: string;
   driver_address: string;
   driver_phone: string;
   driver_license_number: string;
   driver_passport_number: string;
+
   has_second_driver: boolean;
-  second_driver_full_name?: string;
+  second_driver_prenom?: string;
+  second_driver_nom?: string;
   second_driver_address?: string;
   second_driver_phone?: string;
   second_driver_cin_number?: string;
   second_driver_license_number?: string;
   second_driver_passport_number?: string;
+
   start_date: string;
   end_date: string;
   start_time: string;

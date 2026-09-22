@@ -1,11 +1,12 @@
-"use server";
+﻿"use server";
 
 import { createReservation } from "@/lib/api-client";
 
 type WhatsAppData = {
   vehicleLabel: string;
-  fullName: string;
-  age: number;
+  prenom: string;
+  nom: string;
+  dateNaissance: string;
   cinNumber: string;
   licenseIssueDate: string;
   driverAddress: string;
@@ -13,7 +14,8 @@ type WhatsAppData = {
   driverLicenseNumber: string;
   driverPassportNumber: string;
   hasSecondDriver: boolean;
-  secondDriverFullName?: string;
+  secondDriverPrenom?: string;
+  secondDriverNom?: string;
   secondDriverCinNumber?: string;
   startDate: string;
   endDate: string;
@@ -33,8 +35,9 @@ export async function createReservationAction(
       success: true,
       whatsappData: {
         vehicleLabel: "",
-        fullName: "",
-        age: 0,
+        prenom: "",
+        nom: "",
+        dateNaissance: "",
         cinNumber: "",
         licenseIssueDate: "",
         driverAddress: "",
@@ -54,9 +57,9 @@ export async function createReservationAction(
 
   const result = await createReservation({
     vehicle_id: Number(formData.get("vehicle_id")),
-    vehicle_label: "",
-    full_name: String(formData.get("full_name") || "").trim(),
-    age: Number(formData.get("age")),
+    prenom: String(formData.get("prenom") || "").trim(),
+    nom: String(formData.get("nom") || "").trim(),
+    date_naissance: String(formData.get("date_naissance") || ""),
     cin_number: String(formData.get("cin_number") || "").trim(),
     license_issue_date: String(formData.get("license_issue_date") || ""),
     driver_address: String(formData.get("driver_address") || "").trim(),
@@ -64,7 +67,8 @@ export async function createReservationAction(
     driver_license_number: String(formData.get("driver_license_number") || "").trim(),
     driver_passport_number: String(formData.get("driver_passport_number") || "").trim(),
     has_second_driver: hasSecondDriver,
-    second_driver_full_name: String(formData.get("second_driver_full_name") || "").trim(),
+    second_driver_prenom: String(formData.get("second_driver_prenom") || "").trim(),
+    second_driver_nom: String(formData.get("second_driver_nom") || "").trim(),
     second_driver_address: String(formData.get("second_driver_address") || "").trim(),
     second_driver_phone: String(formData.get("second_driver_phone") || "").trim(),
     second_driver_cin_number: String(formData.get("second_driver_cin_number") || "").trim(),

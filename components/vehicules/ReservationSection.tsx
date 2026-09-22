@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useTransition } from "react";
 import type { Vehicle } from "@/lib/db";
@@ -77,23 +77,33 @@ export default function ReservationSection({ vehicle }: { vehicle: Vehicle }) {
                 className="hidden"
               />
 
-              <label className="flex flex-col gap-1">
-                <span className="text-sm font-semibold">Nom complet</span>
-                <input
-                  type="text"
-                  name="full_name"
-                  required
-                  className="rounded-lg border border-black/15 px-3 py-2"
-                />
-              </label>
+              <div className="grid grid-cols-2 gap-3">
+                <label className="flex flex-col gap-1">
+                  <span className="text-sm font-semibold">Prénom</span>
+                  <input
+                    type="text"
+                    name="prenom"
+                    required
+                    className="rounded-lg border border-black/15 px-3 py-2"
+                  />
+                </label>
+
+                <label className="flex flex-col gap-1">
+                  <span className="text-sm font-semibold">Nom</span>
+                  <input
+                    type="text"
+                    name="nom"
+                    required
+                    className="rounded-lg border border-black/15 px-3 py-2"
+                  />
+                </label>
+              </div>
 
               <label className="flex flex-col gap-1">
-                <span className="text-sm font-semibold">Âge</span>
+                <span className="text-sm font-semibold">Date de naissance</span>
                 <input
-                  type="number"
-                  name="age"
-                  min={18}
-                  max={99}
+                  type="date"
+                  name="date_naissance"
                   required
                   className="rounded-lg border border-black/15 px-3 py-2"
                 />
@@ -172,15 +182,27 @@ export default function ReservationSection({ vehicle }: { vehicle: Vehicle }) {
 
               {hasSecondDriver && (
                 <div className="flex flex-col gap-4 rounded-lg border border-black/10 bg-black/[0.02] p-3">
-                  <label className="flex flex-col gap-1">
-                    <span className="text-sm font-semibold">Nom complet (2e conducteur)</span>
-                    <input
-                      type="text"
-                      name="second_driver_full_name"
-                      required={hasSecondDriver}
-                      className="rounded-lg border border-black/15 bg-white px-3 py-2"
-                    />
-                  </label>
+                  <div className="grid grid-cols-2 gap-3">
+                    <label className="flex flex-col gap-1">
+                      <span className="text-sm font-semibold">Prénom (2e conducteur)</span>
+                      <input
+                        type="text"
+                        name="second_driver_prenom"
+                        required={hasSecondDriver}
+                        className="rounded-lg border border-black/15 bg-white px-3 py-2"
+                      />
+                    </label>
+
+                    <label className="flex flex-col gap-1">
+                      <span className="text-sm font-semibold">Nom (2e conducteur)</span>
+                      <input
+                        type="text"
+                        name="second_driver_nom"
+                        required={hasSecondDriver}
+                        className="rounded-lg border border-black/15 bg-white px-3 py-2"
+                      />
+                    </label>
+                  </div>
 
                   <label className="flex flex-col gap-1">
                     <span className="text-sm font-semibold">CIN (2e conducteur)</span>
