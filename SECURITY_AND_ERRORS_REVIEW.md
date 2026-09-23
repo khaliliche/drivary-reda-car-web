@@ -1,4 +1,4 @@
-# Ahmed Red Car — Code Review Report
+﻿# Drivary Car — Code Review Report
 
 Date: 2026-09-12
 Scope: full-codebase review (security, error handling, data leaks, deployment traps)
@@ -118,3 +118,4 @@ Fix: replace with proper UTF-8 literals (`autorisé`, `dépasse`, `Échec`). Gre
 5. Add `requireAdmin()` guard inside admin server actions (M2).
 6. Add `error.tsx` / logging (M4).
 7. Make SSL optional per environment; add a clear startup error if `DATABASE_URL` is missing (M3).
+

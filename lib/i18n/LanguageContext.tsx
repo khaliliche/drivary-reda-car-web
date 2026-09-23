@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import {
   createContext,
@@ -23,7 +23,7 @@ const LanguageContext = createContext<LanguageContextValue | undefined>(
   undefined
 );
 
-const STORAGE_KEY = "ahmedredcar-lang";
+const STORAGE_KEY = "DrivaryCar-lang";
 
 function getByPath(obj: unknown, path: string): unknown {
   return path
@@ -72,14 +72,14 @@ export function LanguageProvider({
     document.documentElement.lang = language;
     document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
     // Also set a cookie for server-side reading
-    document.cookie = `ahmedredcar-lang=${language}; path=/; max-age=31536000`;
+    document.cookie = `DrivaryCar-lang=${language}; path=/; max-age=31536000`;
   }, [language]);
 
   const setLanguage = useCallback((lang: Language) => {
     setLanguageState(lang);
     window.localStorage.setItem(STORAGE_KEY, lang);
     // Set cookie as well
-    document.cookie = `ahmedredcar-lang=${lang}; path=/; max-age=31536000`;
+    document.cookie = `DrivaryCar-lang=${lang}; path=/; max-age=31536000`;
   }, []);
 
   const t = useCallback(

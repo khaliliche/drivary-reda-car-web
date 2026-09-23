@@ -36,7 +36,7 @@ const SUPPORTED_LANGUAGES: Language[] = ["fr", "en", "ar"];
 
 async function getServerLanguage(): Promise<Language> {
   const cookieStore = await cookies();
-  const value = cookieStore.get("ahmedredcar-lang")?.value;
+  const value = cookieStore.get("DrivaryCar-lang")?.value;
   return SUPPORTED_LANGUAGES.includes(value as Language) ? (value as Language) : "fr";
 }
 
@@ -57,7 +57,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: t("metadata.description"),
     icons: {
       icon: "/favicon.ico",
-      apple: "/ahmed-redcar-logo.png",
+      apple: "/drivary-car-logo.png",
     },
     manifest: "/manifest.json",
     appleWebApp: {
@@ -92,3 +92,4 @@ export default async function RootLayout({
     </html>
   );
 }
+

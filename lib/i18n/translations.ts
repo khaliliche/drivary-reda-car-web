@@ -1,4 +1,4 @@
-export type Language = "fr" | "en" | "ar";
+﻿export type Language = "fr" | "en" | "ar";
 
 export const translations = {
   fr: {
@@ -37,13 +37,13 @@ export const translations = {
     },
     bookingBar: { city: "Ville", departure: "Départ", return: "Retour", time: "Heure", search: "Rechercher", dates: "Dates", confirm: "Confirmer", selectDates: "Sélectionnez vos dates", departureDate: "Date de départ", returnDate: "Date de retour" },
     about: {
-      title: "À propos d'Ahmed Red Car",
-      text: "Ahmed Red Car est une agence de location de voitures marocaine, basée à Rabat et Salé, pensée pour offrir une expérience simple, transparente et sans mauvaise surprise. Que ce soit pour un trajet en ville, un week-end à la plage ou vos déplacements à l'aéroport, nous mettons à votre disposition une flotte entretenue et un service réactif.",
+      title: "À propos d'Drivary Car",
+      text: "Drivary Car est une agence de location de voitures marocaine, basée à Rabat et Salé, pensée pour offrir une expérience simple, transparente et sans mauvaise surprise. Que ce soit pour un trajet en ville, un week-end à la plage ou vos déplacements à l'aéroport, nous mettons à votre disposition une flotte entretenue et un service réactif.",
       points: { verified: "Véhicules vérifiés et assurés", presence: "Présence à Rabat et Salé", response: "Réponse rapide, 7j/7" },
     },
     howItWorks: {
       title: "Comment ça marche",
-      subtitle: "Louer une voiture avec Ahmed Red Car en quatre étapes simples.",
+      subtitle: "Louer une voiture avec Drivary Car en quatre étapes simples.",
       steps: [
         { title: "Choisissez votre véhicule", text: "Parcourez notre flotte et trouvez le véhicule adapté à votre voyage." },
         { title: "Réservez en quelques clics", text: "Sélectionnez vos dates et confirmez votre réservation via WhatsApp." },
@@ -57,7 +57,7 @@ export const translations = {
       items: [
         { name: "Youssef B.", text: "Service impeccable, voiture propre et récupérée à l'heure. Je recommande vivement !" },
         { name: "Sara M.", text: "Réservation ultra simple via WhatsApp, réponse rapide et prix clair dès le départ." },
-        { name: "Karim T.", text: "Deuxième location avec Ahmed Red Car, toujours au top pour les road trips au Maroc." },
+        { name: "Karim T.", text: "Deuxième location avec Drivary Car, toujours au top pour les road trips au Maroc." },
       ],
     },
     reviews: {
@@ -75,7 +75,7 @@ export const translations = {
     },
     contact: { title: "Contact", subtitle: "Une question, une réservation particulière ? Contactez-nous directement.", phone: "Téléphone", whatsapp: "WhatsApp", whatsappResponse: "Réponse rapide, 7j/7", serviceZone: "Zone de service", serviceZoneText: "Rabat et Salé" },
     footer: { rights: "Tous droits réservés. Conçu avec passion au Maroc." },
-    whatsapp: { defaultMessage: "Bonjour Ahmed Red Car, je souhaite avoir des informations.", ariaLabel: "Contacter Ahmed Red Car sur WhatsApp" },
+    whatsapp: { defaultMessage: "Bonjour Drivary Car, je souhaite avoir des informations.", ariaLabel: "Contacter Drivary Car sur WhatsApp" },
     vehiclesPage: { title: "Nos véhicules", availability: "Disponibilité à {ville} du {depart} au {retour}.", allFleet: "Toute notre flotte.", noVehicles: "Aucun véhicule pour le moment." },
     vehicleDetail: {
       back: "Retour aux véhicules",
@@ -141,13 +141,13 @@ export const translations = {
     },
     bookingBar: { city: "City", departure: "Pick-up", return: "Return", time: "Time", search: "Search", dates: "Dates", confirm: "Confirm", selectDates: "Select your dates", departureDate: "Pick-up date", returnDate: "Return date" },
     about: {
-      title: "About Ahmed Red Car",
-      text: "Ahmed Red Car is a Moroccan car rental agency, based in Rabat and Salé, built to offer a simple, transparent experience with no bad surprises. Whether it's a trip around town, a weekend at the beach or an airport transfer, we provide a well-maintained fleet and responsive service.",
+      title: "About Drivary Car",
+      text: "Drivary Car is a Moroccan car rental agency, based in Rabat and Salé, built to offer a simple, transparent experience with no bad surprises. Whether it's a trip around town, a weekend at the beach or an airport transfer, we provide a well-maintained fleet and responsive service.",
       points: { verified: "Verified and insured vehicles", presence: "Present in Rabat and Salé", response: "Fast response, 7 days a week" },
     },
     howItWorks: {
       title: "How it works",
-      subtitle: "Rent a car with Ahmed Red Car in four simple steps.",
+      subtitle: "Rent a car with Drivary Car in four simple steps.",
       steps: [
         { title: "Choose your vehicle", text: "Browse our fleet and find the vehicle that suits your trip." },
         { title: "Book in a few clicks", text: "Select your dates and confirm your booking via WhatsApp." },
@@ -161,7 +161,7 @@ export const translations = {
       items: [
         { name: "Youssef B.", text: "Flawless service, clean car picked up right on time. Highly recommend!" },
         { name: "Sara M.", text: "Super simple booking via WhatsApp, quick reply and clear pricing from the start." },
-        { name: "Karim T.", text: "Second rental with Ahmed Red Car, always top-notch for road trips in Morocco." },
+        { name: "Karim T.", text: "Second rental with Drivary Car, always top-notch for road trips in Morocco." },
       ],
     },
     reviews: {
@@ -179,7 +179,7 @@ export const translations = {
     },
     contact: { title: "Contact", subtitle: "A question, a special booking request? Get in touch directly.", phone: "Phone", whatsapp: "WhatsApp", whatsappResponse: "Fast reply, 7 days a week", serviceZone: "Service area", serviceZoneText: "Rabat and Salé" },
     footer: { rights: "All rights reserved. Made with passion in Morocco." },
-    whatsapp: { defaultMessage: "Hello Ahmed Red Car, I'd like some information.", ariaLabel: "Contact Ahmed Red Car on WhatsApp" },
+    whatsapp: { defaultMessage: "Hello Drivary Car, I'd like some information.", ariaLabel: "Contact Drivary Car on WhatsApp" },
     vehiclesPage: { title: "Our vehicles", availability: "Availability in {ville} from {depart} to {retour}.", allFleet: "Our entire fleet.", noVehicles: "No vehicles available yet." },
     vehicleDetail: {
       back: "Back to vehicles",
@@ -245,13 +245,13 @@ export const translations = {
     },
     bookingBar: { city: "المدينة", departure: "الانطلاق", return: "العودة", time: "الوقت", search: "بحث", dates: "التواريخ", confirm: "تأكيد", selectDates: "اختر تواريخك", departureDate: "تاريخ الانطلاق", returnDate: "تاريخ العودة" },
     about: {
-      title: "من نحن - Ahmed Red Car",
-      text: "Ahmed Red Car وكالة مغربية لكراء السيارات، تعمل في الرباط وسلا، صُممت لتقديم تجربة بسيطة وشفافة وبدون مفاجآت غير سارة. سواء كانت رحلة داخل المدينة أو عطلة نهاية أسبوع على الشاطئ أو نقل من وإلى المطار، نوفر لك أسطولًا مصانًا وخدمة سريعة الاستجابة.",
+      title: "من نحن - Drivary Car",
+      text: "Drivary Car وكالة مغربية لكراء السيارات، تعمل في الرباط وسلا، صُممت لتقديم تجربة بسيطة وشفافة وبدون مفاجآت غير سارة. سواء كانت رحلة داخل المدينة أو عطلة نهاية أسبوع على الشاطئ أو نقل من وإلى المطار، نوفر لك أسطولًا مصانًا وخدمة سريعة الاستجابة.",
       points: { verified: "سيارات مفحوصة ومؤمّنة", presence: "تواجد في الرباط وسلا", response: "استجابة سريعة، طوال أيام الأسبوع" },
     },
     howItWorks: {
       title: "كيف يعمل",
-      subtitle: "استأجر سيارة مع Ahmed Red Car في أربع خطوات بسيطة.",
+      subtitle: "استأجر سيارة مع Drivary Car في أربع خطوات بسيطة.",
       steps: [
         { title: "اختر سيارتك", text: "تصفح أسطولنا واعثر على السيارة المناسبة لرحلتك." },
         { title: "احجز في خطوات قليلة", text: "اختر تواريخك وأكّد حجزك عبر واتساب." },
@@ -265,7 +265,7 @@ export const translations = {
       items: [
         { name: "يوسف ب.", text: "خدمة ممتازة، سيارة نظيفة وتم استلامها في الوقت المحدد. أنصح بشدة!" },
         { name: "سارة م.", text: "حجز بسيط جدًا عبر واتساب، رد سريع وسعر واضح منذ البداية." },
-        { name: "كريم ت.", text: "ثاني تجربة كراء مع Ahmed Red Car، دائمًا في المستوى للرحلات الطويلة في المغرب." },
+        { name: "كريم ت.", text: "ثاني تجربة كراء مع Drivary Car، دائمًا في المستوى للرحلات الطويلة في المغرب." },
       ],
     },
     reviews: {
@@ -283,7 +283,7 @@ export const translations = {
     },
     contact: { title: "اتصل بنا", subtitle: "لديك سؤال أو طلب حجز خاص؟ تواصل معنا مباشرة.", phone: "الهاتف", whatsapp: "واتساب", whatsappResponse: "رد سريع، طوال أيام الأسبوع", serviceZone: "منطقة الخدمة", serviceZoneText: "الرباط وسلا" },
     footer: { rights: "جميع الحقوق محفوظة. صُنع بشغف في المغرب." },
-    whatsapp: { defaultMessage: "مرحبًا Ahmed Red Car، أرغب في الحصول على معلومات.", ariaLabel: "تواصل مع Ahmed Red Car عبر واتساب" },
+    whatsapp: { defaultMessage: "مرحبًا Drivary Car، أرغب في الحصول على معلومات.", ariaLabel: "تواصل مع Drivary Car عبر واتساب" },
     vehiclesPage: { title: "سياراتنا", availability: "التوفر في {ville} من {depart} إلى {retour}.", allFleet: "كامل أسطولنا.", noVehicles: "لا توجد سيارات متاحة حاليًا." },
     vehicleDetail: {
       back: "العودة إلى السيارات",
@@ -325,3 +325,4 @@ export const translations = {
 } as const;
 
 export type TranslationTree = typeof translations.fr;
+

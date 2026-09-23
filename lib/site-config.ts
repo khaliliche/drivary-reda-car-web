@@ -1,8 +1,9 @@
-export const siteConfig = {
-  name: "Ahmed Red Car",
+﻿export const siteConfig = {
+  name: "Drivary Car",
   tagline: "Location de voitures au Maroc",
-  phone: "+212 6 61 41 27 59",
-  whatsappNumber: "212661412759",
+  phone: "+212 6 60 05 61 93",
+  whatsappNumber: "212660056193",
+  instagram: "https://www.instagram.com/location_drivary_car/",
   nav: [
     { label: "Accueil", href: "/" },
     { label: "Nos vehicules", href: "/vehicules" },
@@ -37,7 +38,7 @@ export function buildReservationWhatsAppMessage(data: {
   endTime: string;
 }) {
   const lines = [
-    `Nouvelle demande de reservation - Ahmed Red Car`,
+    `Nouvelle demande de reservation - Drivary Car`,
     ``,
     `Vehicule : ${data.vehicleLabel}`,
     `Client : ${data.fullName} (${data.age} ans)`,
@@ -64,4 +65,3 @@ export function buildReservationWhatsAppMessage(data: {
 
   return lines.join("\n");
 }
-

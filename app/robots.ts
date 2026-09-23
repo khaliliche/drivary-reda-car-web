@@ -3,6 +3,7 @@
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: { userAgent: "*", allow: "/", disallow: "/admin" },
-    sitemap: "https://ahmedredcar.com/sitemap.xml",
+    sitemap: "https://DrivaryCar.com/sitemap.xml",
   };
 }
+

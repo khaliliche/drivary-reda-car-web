@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -68,8 +68,8 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="group flex items-center">
             <Image
-              src="/ahmed-redcar-logo.png"
-              alt="Ahmed Red Car"
+              src="/drivary-car-logo.png"
+              alt="Drivary Car"
               width={180}
               height={60}
               className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
@@ -195,11 +195,11 @@ export default function Navbar() {
                 <Link
                   href="/"
                   onClick={() => setMenuOpen(false)}
-                  aria-label="Ahmed Red Car - Accueil"
+                  aria-label="Drivary Car - Accueil"
                 >
                   <Image
-                    src="/ahmed-redcar-logo.png"
-                    alt="Ahmed Red Car"
+                    src="/drivary-car-logo.png"
+                    alt="Drivary Car"
                     width={150}
                     height={55}
                     className="h-10 w-auto object-contain"

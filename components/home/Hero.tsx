@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden px-6 pb-16 pt-28 sm:pt-32 lg:px-10">
       {/* Background gradient animé */}
-      <div className="absolute inset-0 animate-gradient bg-gradient-to-br from-[var(--color-ink)] via-[var(--color-charcoal)] to-[#2D1F1F]" />
+      <div className="absolute inset-0 animate-gradient bg-gradient-to-br from-[var(--color-ink)] via-[var(--color-charcoal)] to-[#14110A]" />
 
       {/* Cercles lumineux flottants */}
       <div className="pointer-events-none absolute left-1/4 top-1/4 h-96 w-96 animate-float rounded-full bg-[var(--color-red-primary)]/20 blur-[100px]" />
@@ -34,8 +34,8 @@ export default function Hero() {
       {/* Grand logo en fond, côté droit */}
       <div className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[52%] lg:block">
         <Image
-          src="/ahmed-redcar-logo.png"
-          alt="Ahmed Red Car"
+          src="/drivary-car-logo.png"
+          alt="Drivary Car"
           fill
           sizes="62vw"
           className="object-contain object-center"
@@ -59,8 +59,8 @@ export default function Hero() {
           className="relative -mt-6 flex justify-center lg:hidden"
         >
           <Image
-            src="/ahmed-redcar-logo.png"
-            alt="Ahmed Red Car"
+            src="/drivary-car-logo.png"
+            alt="Drivary Car"
             width={400}
             height={220}
             className="w-full max-w-[220px] sm:max-w-[260px]"
@@ -130,3 +130,4 @@ export default function Hero() {
     </section>
   );
 }
+

@@ -15,8 +15,8 @@ export default function Footer() {
       <div className="relative mx-auto max-w-6xl px-6 lg:px-10">
         <div className="flex flex-col items-center gap-8 sm:flex-row sm:justify-between mb-12">
           <Image
-            src="/ahmed-redcar-logo.png"
-            alt="Ahmed Red Car"
+            src="/drivary-car-logo.png"
+            alt="Drivary Car"
             width={150}
             height={50}
             className="h-10 w-auto object-contain opacity-90"
@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-white/10 pt-8 text-center">
           <span className="font-body text-xs text-white/30">
-            © {new Date().getFullYear()} Ahmed Red Car. {t("footer.rights")}
+            © {new Date().getFullYear()} Drivary Car. {t("footer.rights")}
           </span>
         </div>
       </div>

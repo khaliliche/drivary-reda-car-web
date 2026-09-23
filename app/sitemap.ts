@@ -1,20 +1,20 @@
-import type { MetadataRoute } from "next";
-import { getVehicles } from "@/lib/db";
+﻿import type { MetadataRoute } from "next";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://ahmedredcar.com";
 
-  const staticRoutes = ["", "/vehicules"].map((path) => ({
-    url: `${base}${path}`,
-    lastModified: new Date(),
-  }));
-
-  const vehicles = await getVehicles();
-
-  const vehicleRoutes = vehicles.map((v) => ({
-    url: `${base}/vehicules/${v.slug}`,
-    lastModified: new Date(),
-  }));
-
-  return [...staticRoutes, ...vehicleRoutes];
+  return [
+    {
+      url: base,
+      lastModified: new Date(),
+    },
+    {
+      url: `${base}/vehicules`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${base}/conditions-generales`,
+      lastModified: new Date(),
+    },
+  ];
 }
