@@ -107,6 +107,7 @@ export const translations = {
       vehicleNotFound: "Véhicule introuvable.",
       minRentalDays: "La durée minimale de location est de {min} jours (vous avez sélectionné {days}).",
       rateLimited: "Trop de demandes. Veuillez réessayer dans quelques minutes.",
+      serverError: "Une erreur est survenue. Veuillez réessayer ou nous contacter sur WhatsApp.",
     },
     languageToggle: { fr: "FR", en: "EN", ar: "AR" },
     metadata: {
@@ -210,7 +211,8 @@ export const translations = {
       licenseDateInFuture: "The license issue date cannot be in the future.",
       vehicleNotFound: "Vehicle not found.",
       minRentalDays: "The minimum rental duration is {min} days (you selected {days}).",
-      rateLimited: "Too many requests. Please try again in a few minutes.",
+            rateLimited: "Too many requests. Please try again in a few minutes.",
+      serverError: "Something went wrong. Please try again or contact us on WhatsApp.",
     },
     languageToggle: { fr: "FR", en: "EN", ar: "AR" },
     metadata: {
@@ -314,7 +316,8 @@ export const translations = {
       licenseDateInFuture: "لا يمكن أن يكون تاريخ الحصول على رخصة القيادة في المستقبل.",
       vehicleNotFound: "السيارة غير موجودة.",
       minRentalDays: "المدة الدنيا للكراء هي {min} أيام (لقد اخترت {days}).",
-      rateLimited: "طلبات كثيرة. يرجى المحاولة مجددًا بعد بضع دقائق.",
+            rateLimited: "طلبات كثيرة. يرجى المحاولة مجددًا بعد بضع دقائق.",
+      serverError: "حدث خطأ ما. يرجى المحاولة مجددًا أو التواصل معنا عبر واتساب.",
     },
     languageToggle: { fr: "FR", en: "EN", ar: "AR" },
     metadata: {

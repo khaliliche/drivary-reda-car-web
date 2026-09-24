@@ -3,41 +3,35 @@
   process.env.API_URL ||
   "http://localhost:3001";
 
+// Mirrors the Vehicle row returned by the API (snake_case, straight from Postgres).
 export type Vehicle = {
-  id: string;
+  id: number;
   slug: string;
-  name?: string;
-  brand?: string;
-  model?: string;
-  category?: string;
-  transmission?: string;
-  seats?: number;
-  pricePerDay?: number;
-  price?: number;
-  imageUrl?: string;
-  images?: string[];
-  [key: string]: unknown;
+  brand: string;
+  model: string;
+  price_per_day: number;
+  price_extended_15: number;
+  price_monthly_30: number;
+  min_rental_days: number;
+  description: string | null;
+  image_url: string | null;
+  created_at: string;
+};
+
+type VehicleFilters = {
+  // ISO dates (YYYY-MM-DD). Both are required for availability filtering.
+  startDate?: string;
+  endDate?: string;
 };
 
 export async function getVehicles(
-  params?: {
-    category?: string;
-    transmission?: string;
-    seats?: number;
-  },
-  transmission?: string
+  filters?: VehicleFilters
 ): Promise<Vehicle[]> {
   const searchParams = new URLSearchParams();
 
-  if (typeof params === "string") {
-    searchParams.set("category", params);
-    if (transmission) searchParams.set("transmission", transmission);
-  } else {
-    if (params?.category) searchParams.set("category", params.category);
-    if (params?.transmission) {
-      searchParams.set("transmission", params.transmission);
-    }
-    if (params?.seats) searchParams.set("seats", String(params.seats));
+  if (filters?.startDate && filters?.endDate) {
+    searchParams.set("start_date", filters.startDate);
+    searchParams.set("end_date", filters.endDate);
   }
 
   const qs = searchParams.toString();
@@ -73,18 +67,44 @@ export async function getVehicleBySlug(
   }
 }
 
-export async function createReservation(data: Record<string, unknown>) {
-  const res = await fetch(`${API_URL}/api/reservations`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  });
+export type ReservationResult =
+  | { success: true; whatsappData: Record<string, unknown> }
+  | {
+      success: false;
+      errorCode: string;
+      errorParams?: Record<string, string | number>;
+    };
 
-  if (!res.ok) {
-    throw new Error("Failed to create reservation");
+export async function createReservation(
+  data: Record<string, unknown>
+): Promise<ReservationResult> {
+  try {
+    const res = await fetch(`${API_URL}/api/reservations`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+      cache: "no-store",
+    });
+
+    // The API sends { success: false, errorCode, errorParams? } with a 4xx status.
+    // Read the body even when res.ok is false so the code reaches the form.
+    const body: unknown = await res.json().catch(() => null);
+
+    if (
+      body &&
+      typeof body === "object" &&
+      "success" in body &&
+      typeof (body as { success: unknown }).success === "boolean"
+    ) {
+      return body as ReservationResult;
+    }
+
+    // Non-JSON or unexpected response (e.g. a 500 error page)
+    return { success: false, errorCode: "serverError" };
+  } catch {
+    // API unreachable
+    return { success: false, errorCode: "serverError" };
   }
-
-  return res.json();
 }

@@ -7,6 +7,8 @@ type SearchParams = {
   retour?: string;
 };
 
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+
 export default async function VehiclesPage({
   searchParams,
 }: {
@@ -15,9 +17,21 @@ export default async function VehiclesPage({
   const params = await searchParams;
 
   const { ville, depart, retour } = params;
-  const hasSearch = Boolean(ville && depart && retour);
 
-  const vehicles = await getVehicles(depart, retour);
+  // Only filter by availability when both dates are valid ISO dates
+  // and the return date is not before the departure date.
+  const hasValidDates = Boolean(
+    depart &&
+      retour &&
+      ISO_DATE.test(depart) &&
+      ISO_DATE.test(retour) &&
+      retour >= depart
+  );
+  const hasSearch = Boolean(ville && hasValidDates);
+
+  const vehicles = await getVehicles(
+    hasSearch ? { startDate: depart, endDate: retour } : undefined
+  );
 
   return (
     <main className="pb-20 pt-24 sm:pt-32">
