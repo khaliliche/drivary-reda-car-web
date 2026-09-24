@@ -1,7 +1,7 @@
-﻿import type { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://ahmedredcar.com";
+  const base = "https://drivarycar.com";
 
   return [
     {
@@ -18,3 +18,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 }
+
