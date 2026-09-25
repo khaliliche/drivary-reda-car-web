@@ -1,4 +1,4 @@
-﻿import { Phone, MapPin, MessageCircle, Instagram } from "lucide-react";
+﻿import { Phone, MapPin, MessageCircle, Camera } from "lucide-react";
 import { siteConfig, buildWhatsAppLink } from "@/lib/site-config";
 
 export default function ContactSection() {
@@ -62,7 +62,7 @@ export default function ContactSection() {
           rel="noopener noreferrer"
           className="group flex flex-col items-start gap-3 border-t-2 border-[var(--color-brass)] bg-[var(--color-mist)] p-5 transition-colors hover:bg-white sm:p-6"
         >
-          <Instagram
+         <Camera
             className="text-[var(--color-brass)]"
             size={22}
           />
