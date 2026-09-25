@@ -106,6 +106,7 @@ export default function ReservationSection({ vehicle }: { vehicle: Vehicle }) {
   const [scanningDoc, setScanningDoc] = useState<DocType | null>(null);
   const [scanError, setScanError] = useState<string | null>(null);
   const fileInputRefs = useRef<Partial<Record<DocType, HTMLInputElement | null>>>({});
+  const formRef = useRef<HTMLFormElement>(null);
 
   function resetAll() {
     setStep("choice");
@@ -181,6 +182,20 @@ export default function ReservationSection({ vehicle }: { vehicle: Vehicle }) {
 
   function handleSubmit(formData: FormData) {
     setError(null);
+
+    const startDate = String(formData.get("start_date") || "");
+    const endDate = String(formData.get("end_date") || "");
+
+    if (!startDate || !endDate) {
+      setError(t("reservationErrors.missingFields"));
+      const missingField = formRef.current?.querySelector<HTMLInputElement>(
+        !startDate ? '[name="start_date"]' : '[name="end_date"]'
+      );
+      missingField?.scrollIntoView({ behavior: "smooth", block: "center" });
+      missingField?.focus();
+      return;
+    }
+
     startTransition(async () => {
       const result = await createReservationAction(formData);
       if (!result.success) {
@@ -407,7 +422,7 @@ export default function ReservationSection({ vehicle }: { vehicle: Vehicle }) {
 
             {/* STEP 4 — Customer info form (SAME form/fields for both paths) */}
             {step === "form" && (
-              <form action={handleSubmit} className="mt-4 flex flex-col gap-4">
+              <form ref={formRef} action={handleSubmit} className="mt-4 flex flex-col gap-4">
                 <input type="hidden" name="vehicle_id" value={vehicle.id} />
 
                 <input
