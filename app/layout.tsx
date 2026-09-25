@@ -1,4 +1,4 @@
-﻿import type { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import { Archivo, Inter } from "next/font/google";
 import "./globals.css";
 import SiteChrome from "@/components/layout/SiteChrome";
@@ -57,7 +57,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: t("metadata.description"),
     icons: {
       icon: "/favicon.ico",
-      apple: "/drivary-car-logo.png",
+      apple: "/drivary-apple-touch-icon.png",
     },
     manifest: "/manifest.json",
     appleWebApp: {

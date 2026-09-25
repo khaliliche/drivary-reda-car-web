@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import BookingBar from "@/components/home/BookingBar";
+import HeroCarousel from "@/components/home/HeroCarousel";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function Hero() {
@@ -32,21 +33,8 @@ export default function Hero() {
       />
 
       {/* Grand logo en fond, côté droit */}
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-0 hidden w-[52%] lg:block">
-        <Image
-          src="/drivary-car-logo.png"
-          alt="Drivary Car"
-          fill
-          sizes="62vw"
-          className="object-contain object-center"
-          style={{
-            maskImage:
-              "radial-gradient(ellipse 70% 70% at center, black 40%, transparent 82%)",
-            WebkitMaskImage:
-              "radial-gradient(ellipse 70% 70% at center, black 40%, transparent 82%)",
-          }}
-          priority
-        />
+      <div className="pointer-events-none absolute inset-y-24 right-6 z-0 hidden w-[36%] lg:block lg:right-10 xl:inset-y-32">
+        <HeroCarousel />
       </div>
 
       <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-14">
@@ -84,12 +72,18 @@ export default function Hero() {
               {t("hero.badge")}
             </span>
 
-            <h1 className="font-display text-5xl font-extrabold leading-[1.1] text-white sm:text-6xl lg:text-7xl">
+            <h1
+              className="font-display text-5xl font-extrabold leading-[1.1] text-white sm:text-6xl lg:text-7xl"
+              style={{ textShadow: "0 2px 20px rgba(0,0,0,0.55)" }}
+            >
               {t("hero.titleLine1")} <br />
               <span className="text-gradient">{t("hero.titleHighlight")}</span>
             </h1>
 
-            <p className="mt-6 max-w-md font-body text-lg leading-relaxed text-white/60">
+            <p
+              className="mt-6 max-w-md font-body text-lg leading-relaxed text-white/85"
+              style={{ textShadow: "0 1px 12px rgba(0,0,0,0.5)" }}
+            >
               {t("hero.subtitle")}
             </p>
 

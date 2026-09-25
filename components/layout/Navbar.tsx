@@ -8,6 +8,7 @@ import { Menu, X, Phone } from "lucide-react";
 import { siteConfig, buildWhatsAppLink } from "@/lib/site-config";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import LanguageToggle from "@/components/layout/LanguageToggle";
+import Logo from "@/components/layout/Logo";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -49,7 +50,7 @@ export default function Navbar() {
       <motion.header
         initial={false}
         animate={{
-          backgroundColor: scrolled ? "rgba(11, 10, 8, 0.72)" : "rgba(11, 10, 8, 0)",
+          backgroundColor: "rgba(11, 10, 8, 0.96)",
           paddingTop: scrolled ? 10 : 16,
           paddingBottom: scrolled ? 10 : 16,
           boxShadow: scrolled
@@ -66,22 +67,15 @@ export default function Navbar() {
           className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-10"
         >
           {/* Logo */}
-          <Link href="/" className="group flex items-center">
-            <Image
-              src="/drivary-car-logo.png"
-              alt="Drivary Car"
-              width={180}
-              height={60}
-              className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-              priority
-            />
+          <Link href="/" className="group flex items-center transition-transform duration-300 group-hover:scale-105">
+            <Logo iconSize={36} textClassName="text-base" />
           </Link>
 
           {/* Navigation desktop */}
           <nav className="hidden items-center gap-8 lg:flex">
             <Link
               href="/"
-              className="group relative font-body text-sm font-medium text-white/80 transition-colors hover:text-white"
+              className="group relative font-body text-xs font-medium text-white/80 transition-colors hover:text-white"
             >
               {t("nav.home")}
 
@@ -89,7 +83,7 @@ export default function Navbar() {
             </Link>
             <Link
               href="/vehicules"
-              className="group relative font-body text-sm font-medium text-white/80 transition-colors hover:text-white"
+              className="group relative font-body text-xs font-medium text-white/80 transition-colors hover:text-white"
             >
               {t("nav.vehicles")}
 
@@ -97,7 +91,7 @@ export default function Navbar() {
             </Link>
             <Link
               href="/#comment-ca-marche"
-              className="group relative font-body text-sm font-medium text-white/80 transition-colors hover:text-white"
+              className="group relative font-body text-xs font-medium text-white/80 transition-colors hover:text-white"
             >
               {t("nav.howItWorks")}
 
@@ -105,7 +99,7 @@ export default function Navbar() {
             </Link>
             <Link
               href="/#a-propos"
-              className="group relative font-body text-sm font-medium text-white/80 transition-colors hover:text-white"
+              className="group relative font-body text-xs font-medium text-white/80 transition-colors hover:text-white"
             >
               {t("nav.about")}
 
@@ -113,7 +107,7 @@ export default function Navbar() {
             </Link>
             <Link
               href="/#contact"
-              className="group relative font-body text-sm font-medium text-white/80 transition-colors hover:text-white"
+              className="group relative font-body text-xs font-medium text-white/80 transition-colors hover:text-white"
             >
               {t("nav.contact")}
 
@@ -127,7 +121,7 @@ export default function Navbar() {
             <div className="flex items-center gap-4">
               <a
                 href={phoneLink}
-                className="group flex items-center gap-2.5 text-sm text-white/70 transition-colors hover:text-white"
+                className="group flex items-center gap-2.5 text-xs text-white/70 transition-colors hover:text-white"
               >
                 <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 transition-colors group-hover:border-[var(--color-red-primary)]/50 group-hover:bg-[var(--color-red-primary)]/10">
                   <Phone
@@ -142,7 +136,7 @@ export default function Navbar() {
                 href={buildWhatsAppLink(whatsappMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-shine rounded-full bg-[var(--color-red-primary)] px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-red-primary/30 transition-all hover:-translate-y-0.5 hover:bg-[var(--color-red-dark)] hover:shadow-red-primary/50"
+                className="btn-shine rounded-full bg-[var(--color-red-primary)] px-5 py-2 text-xs font-semibold text-white shadow-lg shadow-red-primary/30 transition-all hover:-translate-y-0.5 hover:bg-[var(--color-red-dark)] hover:shadow-red-primary/50"
               >
                 {t("nav.bookNow")}
               </a>
@@ -197,13 +191,7 @@ export default function Navbar() {
                   onClick={() => setMenuOpen(false)}
                   aria-label="Drivary Car - Accueil"
                 >
-                  <Image
-                    src="/drivary-car-logo.png"
-                    alt="Drivary Car"
-                    width={150}
-                    height={55}
-                    className="h-10 w-auto object-contain"
-                  />
+                  <Logo iconSize={36} textClassName="text-base" />
                 </Link>
 
                 <button

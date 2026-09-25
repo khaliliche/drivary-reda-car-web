@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "Drivary Car",
   "short_name": "Drivary Car",
   "description": "Location de voitures au Maroc. Flotte premium, prix transparents.",
@@ -8,8 +8,8 @@
   "theme_color": "#0B0A08",
   "icons": [
     {
-      "src": "/drivary-car-logo.png",
-      "sizes": "1200x320",
+      "src": "/drivary-icon-512.png",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     }
