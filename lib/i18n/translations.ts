@@ -108,6 +108,12 @@ export const translations = {
       minRentalDays: "La durée minimale de location est de {min} jours (vous avez sélectionné {days}).",
       rateLimited: "Trop de demandes. Veuillez réessayer dans quelques minutes.",
       serverError: "Une erreur est survenue. Veuillez réessayer ou nous contacter sur WhatsApp.",
+      missingImage: "Veuillez sélectionner ou prendre une photo du document.",
+      invalidImage: "Le fichier envoyé n'est pas une image valide.",
+      imageTooLarge: "L'image est trop volumineuse. Réessayez avec une photo plus légère.",
+      invalidDocType: "Type de document invalide.",
+      invalidRequest: "Requête invalide.",
+      ocrFailed: "La lecture du document a échoué. Réessayez ou remplissez le formulaire manuellement.",
     },
     languageToggle: { fr: "FR", en: "EN", ar: "AR" },
     metadata: {
@@ -213,6 +219,12 @@ export const translations = {
       minRentalDays: "The minimum rental duration is {min} days (you selected {days}).",
             rateLimited: "Too many requests. Please try again in a few minutes.",
       serverError: "Something went wrong. Please try again or contact us on WhatsApp.",
+      missingImage: "Please select or take a photo of the document.",
+      invalidImage: "The uploaded file isn't a valid image.",
+      imageTooLarge: "The image is too large. Try again with a smaller photo.",
+      invalidDocType: "Invalid document type.",
+      invalidRequest: "Invalid request.",
+      ocrFailed: "Reading the document failed. Try again or fill in the form manually.",
     },
     languageToggle: { fr: "FR", en: "EN", ar: "AR" },
     metadata: {
@@ -318,6 +330,12 @@ export const translations = {
       minRentalDays: "المدة الدنيا للكراء هي {min} أيام (لقد اخترت {days}).",
             rateLimited: "طلبات كثيرة. يرجى المحاولة مجددًا بعد بضع دقائق.",
       serverError: "حدث خطأ ما. يرجى المحاولة مجددًا أو التواصل معنا عبر واتساب.",
+      missingImage: "يرجى اختيار أو التقاط صورة للوثيقة.",
+      invalidImage: "الملف المرسل ليس صورة صالحة.",
+      imageTooLarge: "الصورة كبيرة جدًا. أعد المحاولة بصورة أصغر.",
+      invalidDocType: "نوع وثيقة غير صالح.",
+      invalidRequest: "طلب غير صالح.",
+      ocrFailed: "فشلت قراءة الوثيقة. أعد المحاولة أو املأ النموذج يدويًا.",
     },
     languageToggle: { fr: "FR", en: "EN", ar: "AR" },
     metadata: {
@@ -328,4 +346,3 @@ export const translations = {
 } as const;
 
 export type TranslationTree = typeof translations.fr;
-

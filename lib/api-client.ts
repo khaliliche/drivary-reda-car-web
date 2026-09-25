@@ -108,3 +108,57 @@ export async function createReservation(
     return { success: false, errorCode: "serverError" };
   }
 }
+
+export type OcrFieldKey =
+  | "prenom"
+  | "nom"
+  | "date_naissance"
+  | "cin_number"
+  | "cin_delivered_le"
+  | "driver_license_number"
+  | "license_issue_date"
+  | "driver_passport_number"
+  | "passport_delivered_le"
+  | "driver_address";
+
+export type OcrExtractedFields = Partial<
+  Record<OcrFieldKey, { value: string; confidence: "high" | "low" }>
+>;
+
+export type OcrResult =
+  | { success: true; fields: OcrExtractedFields; fieldsFound: number; debugRawText?: string }
+  | { success: false; errorCode: string };
+
+// Forwards a scanned document image to the API's OCR endpoint. Only ever
+// returns a prefill suggestion — nothing is saved server-side from this call.
+export async function extractDocumentOcr(
+  docType: string,
+  imageBlob: Blob
+): Promise<OcrResult> {
+  try {
+    const body = new FormData();
+    body.set("doc_type", docType);
+    body.set("image", imageBlob, "document.jpg");
+
+    const res = await fetch(`${API_URL}/api/ocr`, {
+      method: "POST",
+      body,
+      cache: "no-store",
+    });
+
+    const data: unknown = await res.json().catch(() => null);
+
+    if (
+      data &&
+      typeof data === "object" &&
+      "success" in data &&
+      typeof (data as { success: unknown }).success === "boolean"
+    ) {
+      return data as OcrResult;
+    }
+
+    return { success: false, errorCode: "serverError" };
+  } catch {
+    return { success: false, errorCode: "serverError" };
+  }
+}
