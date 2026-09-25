@@ -1,5 +1,31 @@
-﻿import { Phone, MapPin, MessageCircle, Camera } from "lucide-react";
+﻿import { Phone, MapPin, MessageCircle } from "lucide-react";
 import { siteConfig, buildWhatsAppLink } from "@/lib/site-config";
+
+function InstagramIcon({
+  className,
+  size = 22,
+}: {
+  className?: string;
+  size?: number;
+}) {
+  return (
+    <svg
+      className={className}
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  );
+}
 
 export default function ContactSection() {
   return (
@@ -13,17 +39,21 @@ export default function ContactSection() {
         </h2>
 
         <p className="mt-2 font-body text-sm text-black/60 sm:mt-3 sm:text-base">
-          Une question, une réservation particulière ? Contactez-nous directement.
+          Une question, une réservation particulière ? Contactez-nous
+          directement.
         </p>
       </div>
 
       <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
-
+        {/* Téléphone */}
         <a
           href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
           className="group flex flex-col items-start gap-3 border-t-2 border-[var(--color-red-primary)] bg-[var(--color-mist)] p-5 transition-colors hover:bg-white sm:p-6"
         >
-          <Phone className="text-[var(--color-red-primary)]" size={22} />
+          <Phone
+            className="text-[var(--color-red-primary)]"
+            size={22}
+          />
 
           <span className="font-display font-bold text-[var(--color-ink)]">
             Téléphone
@@ -34,6 +64,7 @@ export default function ContactSection() {
           </span>
         </a>
 
+        {/* WhatsApp */}
         <a
           href={buildWhatsAppLink(
             "Bonjour Drivary Car, je souhaite avoir des informations."
@@ -56,13 +87,14 @@ export default function ContactSection() {
           </span>
         </a>
 
+        {/* Instagram */}
         <a
           href={siteConfig.instagram}
           target="_blank"
           rel="noopener noreferrer"
           className="group flex flex-col items-start gap-3 border-t-2 border-[var(--color-brass)] bg-[var(--color-mist)] p-5 transition-colors hover:bg-white sm:p-6"
         >
-         <Camera
+          <InstagramIcon
             className="text-[var(--color-brass)]"
             size={22}
           />
@@ -76,6 +108,7 @@ export default function ContactSection() {
           </span>
         </a>
 
+        {/* Zone de service */}
         <div className="flex flex-col items-start gap-3 border-t-2 border-[var(--color-brass)] bg-[var(--color-mist)] p-5 sm:p-6">
           <MapPin
             className="text-[var(--color-brass)]"
@@ -90,7 +123,6 @@ export default function ContactSection() {
             Khemisset, Oulmes et environs
           </span>
         </div>
-
       </div>
     </section>
   );
