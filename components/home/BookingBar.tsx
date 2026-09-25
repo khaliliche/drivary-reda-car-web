@@ -28,7 +28,7 @@ export default function BookingBar() {
   return (
     <form onSubmit={handleSubmit} className="relative">
       <div className="grid w-full grid-cols-1 items-stretch gap-2 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_auto]">
-        <label className="flex min-h-[3.5rem] items-center gap-3 rounded-xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm transition-all hover:border-white/25 hover:bg-white/[0.15] focus-within:border-[var(--color-red-primary)]/60 focus-within:bg-white/[0.15] lg:px-5">
+        <label className="flex min-h-[3.5rem] items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.07] px-4 py-3 backdrop-blur-sm transition-all hover:border-white/25 hover:bg-white/[0.15] focus-within:border-[var(--color-red-primary)]/60 focus-within:bg-white/[0.15] lg:px-5">
           <MapPin size={18} className="shrink-0 text-[var(--color-red-primary)]" />
           <div className="flex min-w-0 flex-1 flex-col gap-1">
             <span className="text-[10px] uppercase tracking-wider text-white/40">
@@ -48,7 +48,7 @@ export default function BookingBar() {
           </div>
         </label>
 
-        <label className="flex min-h-[3.5rem] items-center gap-3 rounded-xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm transition-all hover:border-white/25 hover:bg-white/[0.15] focus-within:border-[var(--color-red-primary)]/60 focus-within:bg-white/[0.15] lg:px-5">
+        <label className="flex min-h-[3.5rem] items-center gap-3 rounded-xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/[0.12] focus-within:border-[var(--color-red-primary)]/60 focus-within:bg-white/[0.15] lg:px-5">
           <Calendar size={18} className="shrink-0 text-[var(--color-red-primary)]" />
           <div className="flex min-w-0 flex-1 flex-col gap-1">
             <span className="text-[10px] uppercase tracking-wider text-white/40">
@@ -64,7 +64,7 @@ export default function BookingBar() {
           </div>
         </label>
 
-        <label className="flex min-h-[3.5rem] items-center gap-3 rounded-xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm transition-all hover:border-white/25 hover:bg-white/[0.15] focus-within:border-[var(--color-red-primary)]/60 focus-within:bg-white/[0.15] lg:px-5">
+        <label className="flex min-h-[3.5rem] items-center gap-3 rounded-xl border border-white/15 bg-white/10 px-4 py-3 backdrop-blur-sm transition-all hover:border-white/25 hover:bg-white/[0.15] focus-within:border-[var(--color-red-primary)]/60 focus-within:bg-white/[0.12] lg:px-5">
           <Calendar size={18} className="shrink-0 text-[var(--color-red-primary)]" />
           <div className="flex min-w-0 flex-1 flex-col gap-1">
             <span className="text-[10px] uppercase tracking-wider text-white/40">
@@ -97,7 +97,7 @@ export default function BookingBar() {
 
         <button
           type="submit"
-          className="col-span-1 flex h-auto min-h-[3.5rem] items-center justify-center gap-2 rounded-xl bg-[var(--color-red-primary)] px-6 text-sm font-bold text-white transition-all hover:bg-[var(--color-red-dark)] hover:shadow-lg hover:shadow-red-primary/30 active:scale-[0.98] sm:col-span-2 lg:col-span-1 lg:px-8"
+          className="col-span-1 flex h-auto min-h-[3.5rem] items-center justify-center gap-2 rounded-2xl bg-[var(--color-red-primary)] px-6 text-sm font-bold shadow-lg shadow-[var(--color-red-primary)]/25 text-white transition-all hover:bg-[var(--color-red-dark)] hover:shadow-lg hover:shadow-red-primary/30 active:scale-[0.98] sm:col-span-2 lg:col-span-1 lg:px-8"
         >
           <Search size={18} />
           {t("bookingBar.search")}

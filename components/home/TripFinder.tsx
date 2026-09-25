@@ -31,7 +31,7 @@ export default function TripFinder({ vehicles }: { vehicles: Vehicle[] }) {
           {t("tripFinder.title")}
         </h2>
 
-        <div className="mt-8 grid grid-cols-2 gap-px bg-white/10 sm:mt-10 sm:grid-cols-4">
+        <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-white/10 ring-1 ring-white/10 sm:mt-10 sm:grid-cols-4">
           {tripOptionIcons.map((opt) => {
             const Icon = opt.icon;
             const active = opt.id === selected;
@@ -39,7 +39,7 @@ export default function TripFinder({ vehicles }: { vehicles: Vehicle[] }) {
               <button
                 key={opt.id}
                 onClick={() => setSelected(opt.id)}
-                className={`flex flex-col items-center gap-2 bg-[var(--color-ink)] px-3 py-5 text-xs font-medium transition-colors sm:px-4 sm:py-6 sm:text-sm ${
+                className={`flex flex-col items-center gap-2 bg-[var(--color-ink)] px-3 py-5 text-xs font-medium transition-colors duration-200 hover:bg-[var(--color-ink-soft)] sm:px-4 sm:py-6 sm:text-sm ${
                   active ? "text-white" : "text-white/50 hover:text-white/80"
                 }`}
               >
@@ -76,7 +76,7 @@ export default function TripFinder({ vehicles }: { vehicles: Vehicle[] }) {
 
             <Link
               href={`/vehicules/${vehicle.slug}`}
-              className="inline-flex h-12 shrink-0 items-center justify-center gap-2 border border-[var(--color-red-primary)] px-5 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-red-primary)] active:scale-[0.98] sm:px-6"
+              className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full border border-[var(--color-red-primary)]/60 px-5 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-red-primary)] active:scale-[0.98] sm:px-6"
             >
               {t("tripFinder.seeVehicle")}
               <ArrowRight size={16} />

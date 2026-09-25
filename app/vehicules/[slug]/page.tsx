@@ -53,14 +53,14 @@ export default async function VehiclePage({
       <div className="mx-auto max-w-5xl px-6 lg:px-10">
          <Link
           href="/vehicules"
-          className="inline-flex items-center gap-2 text-sm text-black/60 transition-colors hover:text-black"
+          className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium text-black/60 shadow-sm transition-all hover:border-black/25 hover:text-black hover:shadow"
         >
           <ArrowLeft size={16} />
           Retour aux véhicules
         </Link>
 
         <div className="mt-6 grid grid-cols-1 gap-10 lg:grid-cols-2">
-          <div className="relative aspect-[4/3] overflow-hidden bg-[var(--color-charcoal)]">
+          <div className="rotate-[-3deg] rounded-xl border border-[var(--color-ink)]/10 bg-white/95 px-4 py-3 text-right shadow-lg backdrop-blur-sm">
             {vehicle.image_url ? (
               <Image
                 src={vehicle.image_url}
@@ -92,7 +92,7 @@ export default async function VehiclePage({
             </div>
 
             {vehicle.description && (
-              <div className="border-y border-black/10 py-5">
+              <div className="rounded-2xl border border-black/[0.06] bg-white p-6 shadow-[var(--shadow-card)]">
                 <p className="whitespace-pre-line font-body text-black/70">
                   {vehicle.description}
                 </p>

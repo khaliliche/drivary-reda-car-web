@@ -131,7 +131,7 @@ function ReviewTicket({
   return (
     <div
       dir={dir}
-      className="w-[270px] shrink-0 select-none bg-white shadow-md shadow-black/5 sm:w-[320px]"
+      className="w-[270px] shrink-0 select-none overflow-hidden rounded-2xl bg-white shadow-[var(--shadow-card)] ring-1 ring-black/[0.04] sm:w-[320px]"
     >
       <div className="flex items-center justify-between gap-3 bg-[var(--color-ink)] px-5 py-3">
         <span className="truncate font-display text-sm font-bold text-white">

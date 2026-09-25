@@ -10,7 +10,7 @@ export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
   const { t } = useLanguage();
 
   return (
-    <article className="group overflow-hidden border border-black/10 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+    <article className="group overflow-hidden rounded-2xl border border-black/[0.06] bg-white shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]">
       <Link href={`/vehicules/${vehicle.slug}`} className="block">
         <div className="relative aspect-[16/10] overflow-hidden bg-[var(--color-mist)]">
           {vehicle.image_url ? (
@@ -41,7 +41,7 @@ export default function VehicleCard({ vehicle }: { vehicle: Vehicle }) {
             </div>
 
             <div className="shrink-0 text-right">
-              <span className="font-display text-lg font-extrabold text-[var(--color-ink)]">
+              <span className="font-display text-lg font-extrabold tabular-nums text-[var(--color-ink)]">
                 {vehicle.price_per_day} DH
               </span>
 

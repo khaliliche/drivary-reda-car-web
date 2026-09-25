@@ -30,7 +30,7 @@ export default function TrustIndicators() {
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--color-mist)] text-[var(--color-red-primary)] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-sm">
               <Icon size={24} strokeWidth={2} />
             </div>
-            <span className="font-display text-3xl font-extrabold text-[var(--color-ink)]">
+            <span className="font-display text-3xl font-extrabold tabular-nums text-[var(--color-ink)]">
               {value}<span className="text-[var(--color-red-primary)]">{suffix}</span>
             </span>
             <span className="font-body text-sm text-black/50 font-medium">{label}</span>

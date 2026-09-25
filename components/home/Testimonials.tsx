@@ -24,7 +24,7 @@ export default function ContactSection() {
         {/* Téléphone */}
         <a
           href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-          className="group flex flex-col items-start gap-3 border-t-2 border-[var(--color-red-primary)] bg-[var(--color-mist)] p-5 transition-colors hover:bg-white sm:p-6"
+          className="group flex flex-col items-start gap-3 rounded-2xl border border-black/[0.06] border-t-2 border-t-[var(--color-red-primary)] bg-white p-5 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] sm:p-6"
         >
           <Phone className="text-[var(--color-red-primary)]" size={22} />
 
@@ -56,7 +56,7 @@ export default function ContactSection() {
         </a>
 
         {/* Zone de service */}
-        <div className="flex flex-col items-start gap-3 border-t-2 border-[var(--color-brass)] bg-[var(--color-mist)] p-5 sm:p-6">
+        <div className="flex flex-col items-start gap-3 rounded-2xl border border-black/[0.06] border-t-2 border-t-[var(--color-brass)] bg-white p-5 shadow-[var(--shadow-card)] sm:p-6">
           <MapPin className="text-[var(--color-brass)]" size={22} />
 
           <span className="font-display font-bold text-[var(--color-ink)]">

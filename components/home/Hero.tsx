@@ -68,7 +68,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="order-2 max-w-xl lg:order-none"
           >
-            <span className="mb-6 inline-block rounded-full border border-white/20 bg-white/5 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-[var(--color-red-primary)]">
+            <span className="mb-6 inline-block rounded-full border border-white/15 bg-white/[0.07] px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-[var(--color-red-primary)]">
               {t("hero.badge")}
             </span>
 
@@ -97,7 +97,7 @@ export default function Hero() {
 
               <a
                 href="#contact"
-                className="rounded-full border border-white/20 bg-white/5 px-8 py-3.5 text-sm font-bold text-white backdrop-blur-sm transition-all hover:-translate-y-1 hover:bg-white/10"
+                className="rounded-full border border-white/15 bg-white/[0.07] px-8 py-3.5 text-sm font-bold text-white backdrop-blur-sm transition-all hover:-translate-y-1 hover:bg-white/10"
               >
                 {t("hero.ctaContact")}
               </a>

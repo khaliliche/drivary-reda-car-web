@@ -58,7 +58,7 @@ export default function Navbar() {
             : "0 0 0 rgba(0, 0, 0, 0)",
         }}
         transition={{ duration: reduceMotion ? 0 : 0.5, ease }}
-        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-[14px]"
+        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl"
       >
         <motion.nav
           initial={{ opacity: 0, y: -8 }}
@@ -123,7 +123,7 @@ export default function Navbar() {
                 href={phoneLink}
                 className="group flex items-center gap-2.5 text-xs text-white/70 transition-colors hover:text-white"
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/5 transition-colors group-hover:border-[var(--color-red-primary)]/50 group-hover:bg-[var(--color-red-primary)]/10">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/[0.07] transition-all duration-200 group-hover:border-[var(--color-red-primary)]/40 group-hover:bg-[var(--color-red-primary)]/10">
                   <Phone
                     size={15}
                     className="text-[var(--color-red-primary)]"
@@ -182,7 +182,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={spring}
-              className="fixed inset-y-0 right-0 z-[70] flex w-[82%] max-w-sm flex-col bg-[var(--color-ink)]/98 px-6 py-6 shadow-2xl backdrop-blur-xl lg:hidden"
+              className="fixed inset-y-0 right-0 z-[70] flex w-[82%] max-w-sm flex-col bg-[var(--color-ink)]/95 px-6 py-6 shadow-2xl backdrop-blur-xl border-l border-white/10 lg:hidden"
             >
               {/* Header mobile */}
               <div className="flex items-center justify-between">

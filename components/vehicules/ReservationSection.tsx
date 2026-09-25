@@ -31,12 +31,12 @@ export default function ReservationSection({ vehicle }: { vehicle: Vehicle }) {
   return (
     <>
       <button
-        type="button"
-        onClick={() => setIsOpen(true)}
-        className="hidden items-center justify-center bg-[var(--color-red-primary)] px-6 py-4 text-sm font-semibold text-white transition-colors hover:bg-[var(--color-red-dark)] sm:inline-flex"
-      >
-        Réserver ce véhicule
-      </button>
+  type="button"
+  onClick={() => setIsOpen(true)}
+  className="inline-flex items-center justify-center rounded-xl bg-[var(--color-red-primary)] px-6 py-4 text-sm font-semibold text-white shadow-lg shadow-[var(--color-red-primary)]/25 transition-all duration-200 hover:bg-[var(--color-red-dark)] hover:shadow-[var(--color-red-primary)]/40 active:scale-[0.98]"
+>
+  Réserver ce véhicule
+</button>
 
       <div className="safe-bottom fixed bottom-0 left-0 right-0 z-40 border-t border-black/5 bg-white p-4 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] sm:hidden">
         <button
@@ -50,7 +50,7 @@ export default function ReservationSection({ vehicle }: { vehicle: Vehicle }) {
 
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 p-0 sm:items-center sm:p-4">
-          <div className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-t-2xl bg-white p-6 sm:rounded-2xl">
+          <div className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded-t-3xl bg-white p-6 shadow-2xl sm:rounded-3xl">
             <div className="flex items-center justify-between">
               <h2 className="font-display text-xl font-bold text-[var(--color-ink)]">
                 Réserver {vehicle.brand} {vehicle.model}
@@ -94,7 +94,7 @@ export default function ReservationSection({ vehicle }: { vehicle: Vehicle }) {
                     type="text"
                     name="nom"
                     required
-                    className="rounded-lg border border-black/15 px-3 py-2"
+                    className="rounded-xl border border-black/10 bg-[var(--color-paper)] px-3 py-2.5 text-sm outline-none transition-colors focus:border-[var(--color-red-primary)]/60 focus:ring-2 focus:ring-[var(--color-red-primary)]/15"
                   />
                 </label>
               </div>
@@ -299,13 +299,13 @@ export default function ReservationSection({ vehicle }: { vehicle: Vehicle }) {
               </div>
 
               {error && (
-                <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600">{error}</p>
+                <p className="rounded-xl border border-red-100 bg-red-50 px-3 py-2 text-sm text-red-600">{error}</p>
               )}
 
               <button
                 type="submit"
                 disabled={isPending}
-                className="mt-2 rounded-lg bg-[var(--color-red-primary)] px-4 py-2.5 font-semibold text-white disabled:opacity-60"
+                className="mt-2 rounded-xl bg-[var(--color-red-primary)] px-4 py-3 font-semibold text-white shadow-lg shadow-[var(--color-red-primary)]/25 transition-all hover:bg-[var(--color-red-dark)] disabled:opacity-60"
               >
                 {isPending ? "Envoi..." : "Confirmer et envoyer sur WhatsApp"}
               </button>
