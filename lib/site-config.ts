@@ -21,8 +21,9 @@ export function buildWhatsAppLink(message: string) {
 
 export function buildReservationWhatsAppMessage(data: {
   vehicleLabel: string;
-  fullName: string;
-  age: number;
+  prenom: string;
+  nom: string;
+  dateNaissance: string;
   cinNumber: string;
   licenseIssueDate: string;
   driverAddress: string;
@@ -30,7 +31,8 @@ export function buildReservationWhatsAppMessage(data: {
   driverLicenseNumber: string;
   driverPassportNumber: string;
   hasSecondDriver: boolean;
-  secondDriverFullName?: string;
+  secondDriverPrenom?: string;
+  secondDriverNom?: string;
   secondDriverCinNumber?: string;
   startDate: string;
   endDate: string;
@@ -41,7 +43,7 @@ export function buildReservationWhatsAppMessage(data: {
     `Nouvelle demande de reservation - Drivary Car`,
     ``,
     `Vehicule : ${data.vehicleLabel}`,
-    `Client : ${data.fullName} (${data.age} ans)`,
+    `Client : ${data.prenom} ${data.nom} (né le ${data.dateNaissance})`,
     `CIN N° : ${data.cinNumber}`,
     `N° permis : ${data.driverLicenseNumber}`,
     `Permis obtenu le : ${data.licenseIssueDate}`,
@@ -53,7 +55,7 @@ export function buildReservationWhatsAppMessage(data: {
   if (data.hasSecondDriver) {
     lines.push(
       ``,
-      `2e conducteur : ${data.secondDriverFullName ?? ""} (CIN ${data.secondDriverCinNumber ?? ""})`
+      `2e conducteur : ${data.secondDriverPrenom ?? ""} ${data.secondDriverNom ?? ""} (CIN ${data.secondDriverCinNumber ?? ""})`
     );
   }
 

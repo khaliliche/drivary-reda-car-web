@@ -120,6 +120,15 @@ export default function ReservationSection({ vehicle }: { vehicle: Vehicle }) {
               </label>
 
               <label className="flex flex-col gap-1">
+                <span className="text-sm font-semibold">CIN délivrée le (optionnel)</span>
+                <input
+                  type="date"
+                  name="cin_delivered_le"
+                  className="rounded-lg border border-black/15 px-3 py-2"
+                />
+              </label>
+
+              <label className="flex flex-col gap-1">
                 <span className="text-sm font-semibold">Numéro de permis de conduire</span>
                 <input
                   type="text"
@@ -139,11 +148,21 @@ export default function ReservationSection({ vehicle }: { vehicle: Vehicle }) {
                 />
               </label>
 
-              <label className="flex flex-col gap-1">
+                           <label className="flex flex-col gap-1">
                 <span className="text-sm font-semibold">Numéro de passeport</span>
                 <input
                   type="text"
                   name="driver_passport_number"
+                  required
+                  className="rounded-lg border border-black/15 px-3 py-2"
+                />
+              </label>
+
+              <label className="flex flex-col gap-1">
+                <span className="text-sm font-semibold">Passeport délivré le</span>
+                <input
+                  type="date"
+                  name="passport_delivered_le"
                   required
                   className="rounded-lg border border-black/15 px-3 py-2"
                 />
@@ -205,11 +224,30 @@ export default function ReservationSection({ vehicle }: { vehicle: Vehicle }) {
                   </div>
 
                   <label className="flex flex-col gap-1">
+                    <span className="text-sm font-semibold">Date de naissance (2e conducteur)</span>
+                    <input
+                      type="date"
+                      name="second_driver_date_naissance"
+                      required={hasSecondDriver}
+                      className="rounded-lg border border-black/15 bg-white px-3 py-2"
+                    />
+                  </label>
+
+                  <label className="flex flex-col gap-1">
                     <span className="text-sm font-semibold">CIN (2e conducteur)</span>
                     <input
                       type="text"
                       name="second_driver_cin_number"
                       required={hasSecondDriver}
+                      className="rounded-lg border border-black/15 bg-white px-3 py-2"
+                    />
+                  </label>
+
+                  <label className="flex flex-col gap-1">
+                    <span className="text-sm font-semibold">CIN délivrée le (2e conducteur, optionnel)</span>
+                    <input
+                      type="date"
+                      name="second_driver_cin_delivered_le"
                       className="rounded-lg border border-black/15 bg-white px-3 py-2"
                     />
                   </label>
@@ -241,11 +279,20 @@ export default function ReservationSection({ vehicle }: { vehicle: Vehicle }) {
                     />
                   </label>
 
-                  <label className="flex flex-col gap-1">
+                                    <label className="flex flex-col gap-1">
                     <span className="text-sm font-semibold">Numéro de passeport (2e conducteur)</span>
                     <input
                       type="text"
                       name="second_driver_passport_number"
+                      className="rounded-lg border border-black/15 bg-white px-3 py-2"
+                    />
+                  </label>
+
+                  <label className="flex flex-col gap-1">
+                    <span className="text-sm font-semibold">Passeport délivré le (2e conducteur, optionnel)</span>
+                    <input
+                      type="date"
+                      name="second_driver_passport_delivered_le"
                       className="rounded-lg border border-black/15 bg-white px-3 py-2"
                     />
                   </label>
