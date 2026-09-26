@@ -82,6 +82,7 @@ export async function createReservationAction(
     has_second_driver: hasSecondDriver,
     second_driver_prenom: String(formData.get("second_driver_prenom") || "").trim(),
     second_driver_nom: String(formData.get("second_driver_nom") || "").trim(),
+    second_driver_date_naissance: String(formData.get("second_driver_date_naissance") || ""),
     second_driver_address: String(formData.get("second_driver_address") || "").trim(),
     second_driver_phone: String(formData.get("second_driver_phone") || "").trim(),
     second_driver_cin_number: String(formData.get("second_driver_cin_number") || "").trim(),

@@ -648,6 +648,16 @@ export default function ReservationSection({ vehicle }: { vehicle: Vehicle }) {
                     </div>
 
                     <label className="flex flex-col gap-1">
+                      <span className="text-sm font-semibold">Date de naissance (2e conducteur)</span>
+                      <input
+                        type="date"
+                        name="second_driver_date_naissance"
+                        required={hasSecondDriver}
+                        className="rounded-lg border border-black/15 bg-white px-3 py-2"
+                      />
+                    </label>
+
+                    <label className="flex flex-col gap-1">
                       <span className="text-sm font-semibold">CIN (2e conducteur)</span>
                       <input
                         type="text"
