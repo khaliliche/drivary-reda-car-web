@@ -4,10 +4,23 @@ const nextConfig: NextConfig = {
   // Default Server Action body limit is 1MB — too small for a document
   // photo. Client-side compression (see ReservationSection) keeps uploads
   // well under this, this just gives headroom.
-  experimental: {
+    experimental: {
     serverActions: {
       bodySizeLimit: "4mb",
     },
+  },
+  async headers() {
+    return [
+      {
+        source: "/:path*.(png|jpg|jpeg|gif|svg|ico|webp|avif)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=604800, stale-while-revalidate=2592000",
+          },
+        ],
+      },
+    ];
   },
   images: {
     dangerouslyAllowSVG: true,
