@@ -164,13 +164,6 @@ export default function ReservationSection({ vehicle }: { vehicle: Vehicle }) {
         setScanError(t(`reservationErrors.${result.errorCode}`));
         return;
       }
-      // TEMP DEBUG: open the browser console (F12) after a scan to see
-      // exactly what Tesseract read from the document — this is what lets
-      // the extraction rules get tuned against real output.
-      // eslint-disable-next-line no-console
-      console.log(`[OCR ${docType}] raw text:`, result.debugRawText);
-      // eslint-disable-next-line no-console
-      console.log(`[OCR ${docType}] extracted fields:`, result.fields);
       mergeExtractedFields(result.fields);
       setScannedDocs((prev) => ({ ...prev, [docType]: true }));
     } catch {

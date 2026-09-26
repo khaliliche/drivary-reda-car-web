@@ -1,7 +1,19 @@
 ﻿"use server";
 
+import { headers } from "next/headers";
 import { createReservation, extractDocumentOcr, type OcrResult } from "@/lib/api-client";
 
+// Reads the visitor's real IP off the incoming request to this server action,
+// so it can be forwarded to the api app (which never sees the browser
+// directly — see lib/api-client.ts).
+async function getIncomingClientIp(): Promise<string | undefined> {
+  const h = await headers();
+  return (
+    h.get("x-real-ip") ??
+    h.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+    undefined
+  );
+}
 type WhatsAppData = {
   vehicleLabel: string;
   prenom: string;
@@ -54,6 +66,7 @@ export async function createReservationAction(
   }
 
   const hasSecondDriver = formData.get("has_second_driver") === "on";
+  const clientIp = await getIncomingClientIp();
 
   const result = await createReservation({
     vehicle_id: Number(formData.get("vehicle_id")),
@@ -78,7 +91,7 @@ export async function createReservationAction(
     end_date: String(formData.get("end_date") || ""),
     start_time: String(formData.get("start_time") || ""),
     end_time: String(formData.get("end_time") || ""),
-  });
+  }, clientIp);
 
   return result as ActionResult;
 }
@@ -96,5 +109,6 @@ export async function extractOcrAction(formData: FormData): Promise<OcrResult> {
     return { success: false, errorCode: "missingImage" };
   }
 
-  return extractDocumentOcr(docType, image);
+  const clientIp = await getIncomingClientIp();
+  return extractDocumentOcr(docType, image, clientIp);
 }

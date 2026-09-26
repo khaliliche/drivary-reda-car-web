@@ -77,8 +77,9 @@ export const translations = {
     footer: { rights: "Tous droits réservés. Conçu avec passion au Maroc." },
     whatsapp: { defaultMessage: "Bonjour Drivary Car, je souhaite avoir des informations.", ariaLabel: "Contacter Drivary Car sur WhatsApp" },
     vehiclesPage: { title: "Nos véhicules", availability: "Disponibilité à {ville} du {depart} au {retour}.", allFleet: "Toute notre flotte.", noVehicles: "Aucun véhicule pour le moment." },
-    vehicleDetail: {
+        vehicleDetail: {
       back: "Retour aux véhicules",
+      noPhoto: "Pas de photo",
       perDay: "par jour",
       reserveWhatsapp: "Réserver ce véhicule via WhatsApp",
       reserveWhatsappMobile: "Réserver via WhatsApp - {price} DH/j",
@@ -102,7 +103,8 @@ export const translations = {
     reservationErrors: {
       missingFields: "Veuillez remplir tous les champs.",
       invalidAge: "L'âge doit être compris entre 18 et 99 ans.",
-      invalidDateRange: "La date de retour doit être après la date de départ.",
+            invalidDateRange: "La date de retour doit être après la date de départ.",
+      startDateInPast: "La date de départ ne peut pas être dans le passé.",
       licenseDateInFuture: "La date d'obtention du permis ne peut pas être dans le futur.",
       vehicleNotFound: "Véhicule introuvable.",
       minRentalDays: "La durée minimale de location est de {min} jours (vous avez sélectionné {days}).",
@@ -188,8 +190,9 @@ export const translations = {
     footer: { rights: "All rights reserved. Made with passion in Morocco." },
     whatsapp: { defaultMessage: "Hello Drivary Car, I'd like some information.", ariaLabel: "Contact Drivary Car on WhatsApp" },
     vehiclesPage: { title: "Our vehicles", availability: "Availability in {ville} from {depart} to {retour}.", allFleet: "Our entire fleet.", noVehicles: "No vehicles available yet." },
-    vehicleDetail: {
+        vehicleDetail: {
       back: "Back to vehicles",
+      noPhoto: "No photo",
       perDay: "per day",
       reserveWhatsapp: "Book this vehicle via WhatsApp",
       reserveWhatsappMobile: "Book via WhatsApp - {price} DH/day",
@@ -214,6 +217,7 @@ export const translations = {
       missingFields: "Please fill in all fields.",
       invalidAge: "Age must be between 18 and 99.",
       invalidDateRange: "The return date must be after the pick-up date.",
+      startDateInPast: "The pick-up date cannot be in the past.",
       licenseDateInFuture: "The license issue date cannot be in the future.",
       vehicleNotFound: "Vehicle not found.",
       minRentalDays: "The minimum rental duration is {min} days (you selected {days}).",
@@ -299,8 +303,9 @@ export const translations = {
     footer: { rights: "جميع الحقوق محفوظة. صُنع بشغف في المغرب." },
     whatsapp: { defaultMessage: "مرحبًا Drivary Car، أرغب في الحصول على معلومات.", ariaLabel: "تواصل مع Drivary Car عبر واتساب" },
     vehiclesPage: { title: "سياراتنا", availability: "التوفر في {ville} من {depart} إلى {retour}.", allFleet: "كامل أسطولنا.", noVehicles: "لا توجد سيارات متاحة حاليًا." },
-    vehicleDetail: {
+        vehicleDetail: {
       back: "العودة إلى السيارات",
+      noPhoto: "لا توجد صورة",
       perDay: "في اليوم",
       reserveWhatsapp: "احجز هذه السيارة عبر واتساب",
       reserveWhatsappMobile: "احجز عبر واتساب - {price} درهم/يوم",
@@ -325,6 +330,7 @@ export const translations = {
       missingFields: "يرجى ملء جميع الحقول.",
       invalidAge: "يجب أن يكون العمر بين 18 و99 سنة.",
       invalidDateRange: "يجب أن يكون تاريخ العودة بعد تاريخ الانطلاق.",
+      startDateInPast: "لا يمكن أن يكون تاريخ الانطلاق في الماضي.",
       licenseDateInFuture: "لا يمكن أن يكون تاريخ الحصول على رخصة القيادة في المستقبل.",
       vehicleNotFound: "السيارة غير موجودة.",
       minRentalDays: "المدة الدنيا للكراء هي {min} أيام (لقد اخترت {days}).",

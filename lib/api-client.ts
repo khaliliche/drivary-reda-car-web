@@ -9,9 +9,7 @@ export type Vehicle = {
   slug: string;
   brand: string;
   model: string;
-  price_per_day: number;
-  price_extended_15: number;
-  price_monthly_30: number;
+    price_per_day: number;
   min_rental_days: number;
   description: string | null;
   image_url: string | null;
@@ -76,13 +74,15 @@ export type ReservationResult =
     };
 
 export async function createReservation(
-  data: Record<string, unknown>
+  data: Record<string, unknown>,
+  clientIp?: string
 ): Promise<ReservationResult> {
   try {
     const res = await fetch(`${API_URL}/api/reservations`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        ...(clientIp ? { "x-forwarded-for": clientIp } : {}),
       },
       body: JSON.stringify(data),
       cache: "no-store",
@@ -126,14 +126,15 @@ export type OcrExtractedFields = Partial<
 >;
 
 export type OcrResult =
-  | { success: true; fields: OcrExtractedFields; fieldsFound: number; debugRawText?: string }
+  | { success: true; fields: OcrExtractedFields; fieldsFound: number }
   | { success: false; errorCode: string };
 
 // Forwards a scanned document image to the API's OCR endpoint. Only ever
 // returns a prefill suggestion — nothing is saved server-side from this call.
 export async function extractDocumentOcr(
   docType: string,
-  imageBlob: Blob
+  imageBlob: Blob,
+  clientIp?: string
 ): Promise<OcrResult> {
   try {
     const body = new FormData();
@@ -142,6 +143,7 @@ export async function extractDocumentOcr(
 
     const res = await fetch(`${API_URL}/api/ocr`, {
       method: "POST",
+      headers: clientIp ? { "x-forwarded-for": clientIp } : undefined,
       body,
       cache: "no-store",
     });
